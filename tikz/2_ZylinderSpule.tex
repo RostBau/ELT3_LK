@@ -1,0 +1,81 @@
+%Autor: Simon Walker
+%Version: 1.0
+%Datum: 10.11.2019
+
+\begin{tikzpicture}[
+  x=8mm,
+  y=cos(30)*8mm,
+  z={(0, -sin(30)*8mm)},
+]
+	\def\cylrad{1}% Zylinder Radius
+	\def\cylht{5.5} %Zylinder Höhe
+	\def\anzWind{10} %Anzahl Windungen (min 3)
+	
+	
+	
+	\draw[ultra thick] %Windungen Hinten
+	\foreach \y in {\cylht/(2*\anzWind), 3*\cylht/(2*\anzWind),..., (((2*\anzWind-3)*\cylht)/(2*\anzWind))+0.1} 
+	{
+	 	plot[smooth, samples=25, variable=\t, domain=0:180]
+	 	({-cos(\t)*\cylrad*1.1},
+	 	{\y*0.8 + \cylht*0.1 + \t*(\cylht*0.8)/(360*\anzWind)},
+	 	{-sin(\t)*\cylrad})
+	}
+
+	% Letzte Windung anders
+	plot[smooth, samples=12, variable=\t, domain=0:90]
+	(({-cos(\t)*\cylrad*1.1},
+	{((2*\anzWind-1)*\cylht/(2*\anzWind))*0.8 + \cylht*0.1 + \t*(\cylht*0.8)/(360*\anzWind)},
+	{-sin(\t)*\cylrad})
+	-- ++(\cylrad*2, 0) coordinate(b);
+	
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%Zylinder Farbig hinterlegen
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\filldraw [gray!25] (-\cylrad, \cylht) -- (-\cylrad, 0) -- (\cylrad, 0) -- (\cylrad, \cylht) -- (-\cylrad, \cylht);
+  	%Boden
+	\filldraw [gray!25] (0,0) ellipse [x radius=\cylrad, y radius=0.5\cylrad];
+	%Deckel
+	\filldraw [gray!10] (0,\cylht) ellipse [x radius=\cylrad, y radius=0.5\cylrad];
+  
+	\draw %Rand Zeichnern
+	(-\cylrad, \cylht) -- (-\cylrad, 0) --
+    plot[smooth, samples=25, variable=\t, domain=180:360]
+      ({cos(\t)*\cylrad}, 0, {-sin(\t)*\cylrad}) --
+    (\cylrad, \cylht)
+    plot[smooth cycle, samples=51, variable=\t, domain=0:360]
+      ({cos(\t)*\cylrad}, \cylht, {-sin(\t)*\cylrad});
+	\draw[densely dashed] % Boden Hinten
+	plot[smooth, samples=9, variable=\t, domain=0:180]
+      ({cos(\t)*\cylrad}, 0, {-sin(\t)*\cylrad});
+      
+    %%%%%%%%%%%%%%%%%%%%%%
+    %Windungen vorne  
+    %%%%%%%%%%%%%%%%%%%%%%
+	\draw[ultra thick] 
+	%Erste Windung anders
+	plot[smooth, samples=25, variable=\t, domain=360:270]
+	({-cos(\t)*\cylrad*1.1},
+	{\cylht*0.1 + (\t-180)*(\cylht*0.8)/(360*\anzWind)},
+	{-sin(\t)*\cylrad}) -- ++(\cylrad*2, 0) coordinate(a);
+	%Restliche Windungen
+	\draw [ultra thick]
+    \foreach \y in {\cylht/\anzWind, 2*\cylht/\anzWind,..., (\anzWind-1)*\cylht/\anzWind+0.1} {
+      plot[smooth, samples=25, variable=\t, domain=180:360]
+        ({-cos(\t)*\cylrad*1.1},
+        {\y*0.8 + \cylht*0.1 + (\t-180)*(\cylht*0.8)/(360*\anzWind)},
+        {-sin(\t)*\cylrad})
+    };
+	
+	\fill (a) circle [radius=.1] (b) circle [radius=.1];
+	
+	\draw [thick, blue, <->] (-\cylrad*1.5, 0) -- (-\cylrad*1.5, \cylht);
+	\node [blue, left] at (-\cylrad*1.5, \cylht/2) {\large $l$};
+	
+	\draw [thick, blue, ->] (0, \cylht, 0) -- (\cylrad/1.415, \cylht, -\cylrad/1.415);
+	\node [blue, above] at (0, \cylht, 0) {\large $r$};
+	
+   
+\end{tikzpicture}

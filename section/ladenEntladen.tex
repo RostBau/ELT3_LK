@@ -1,0 +1,69 @@
+\kommentar{(Ent-)Laden Kondensator} %Thema
+  
+\begin{karte}{Wie heisst die Gleichung der folgender Entladefunktion?\\ \input{tikz/1_entladen.tex}}
+  	\begin{center}
+  		\huge
+  		$u(t) = U_0 \cdot e^{-\frac{t}{\tau}} $
+  	\end{center}
+\end{karte}
+
+\begin{karte}{Wie heisst die Gleichung der folgender Entladefunktion?\\ \input{tikz/1_entladen_negativ.tex}}
+	\begin{center}
+		\huge
+		$u(t) = U_0 \cdot e^{-\frac{t}{\tau}} $\\[10pt]
+		\normalsize
+		Wobei $U_0$ negativ ist.
+	\end{center}
+\end{karte}
+
+\begin{karte}{Wie heisst die Gleichung der folgender Ladefunktion?\\ \input{tikz/1_laden.tex}}
+	\begin{center}
+		\huge
+		$u(t) = U_0 \cdot (1 - e^{-\frac{t}{\tau}}) $
+	\end{center}
+\end{karte}
+
+\begin{karte}{Wie lautet die Differenzialgleichung des Kondensators und was folgt daraus?}
+	\begin{center}
+		\huge
+		$\frac{d u_{C}}{d t}=\frac{i_{C}}{C}$
+	\end{center}
+	\begin{itemize}
+		\item Strom durch einen Kondensator bedingt einer Spannungsänderung
+		\item Bei einem grossen Kondensator $(C \gg 0)$ führen auch grosse Ströme nur zu relativ kleinen Spannungsänderungen.
+		\item Eine grosse Spannungsänderung an einem Kondensator bedingt einem grossen Strom oder einer kleinen Kapazität
+	\end{itemize}
+	
+\end{karte}
+
+\begin{karte}{Wie kann die Spannung $u_C(t)$ berechnet werden wenn zum Zeitpunkt $t_0$ der Schalter geschlossen wird?\\[10pt] \input{tikz/1_Schema1.tex}}
+	1. Ersatzspannungsquelle berechnen für den geschlossenen Schalter.\\
+	\begin{minipage}{0.6\textwidth}
+		\input{tikz/1_Schema2.tex}
+	\end{minipage}
+	\begin{minipage}{0.4\textwidth}
+		$R_i = \dfrac{R_1\cdot R_2}{R_1+R_2}$\\[5pt]
+		$U_e = U_0 \cdot \dfrac{R_2}{R_1 + R_2}$
+	\end{minipage}
+	2. Spannung $u_C$ berechnen.\\
+	$ u_C(t)= U_e \cdot \left(1-e^{\frac{-t}{\tau}}\right)$
+
+\end{karte}
+
+\begin{karte}{Was ist ein Verschiebungsstrom?}
+	\begin{center}
+		\begin{itemize}
+			\item 	Kirchhof ist nicht mehr allgemein gültig. Denn es kann sich nun auch Ladung ansammeln.\\
+			\begin{equation*}
+			\displaystyle \oint_{\text {Hülle }} \vec{J} \cdot d \vec{s}=0 \quad \Leftrightarrow \quad  \sum_{n} I_{n}=0
+			\end{equation*}
+			Deshalb muss nun Kirchhof mit dem Verschiebungsstrom erweitert werden:\\
+			\begin{equation*}
+			\displaystyle \oint_{\text {Hülle }} \vec{J} \cdot d \vec{s}+\frac{d Q_{\text {eingeschlossen }}}{d t}(t)=0
+			\end{equation*}
+			\item Der Verschiebungsstrom verursacht ebenfalls ein Magnetfeld!
+		\end{itemize}
+	\end{center}
+\end{karte}	
+
+

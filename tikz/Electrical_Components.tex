@@ -1,0 +1,176 @@
+%Autor: Simon Walker
+%Version: 1.1
+%Datum: 09.11.2019
+
+
+%Horizontaler Widerstand Parameter: xKoordinate, yKoordinate, Bezeichnung, Position (a=>above, b=>below)
+%Anschluss ist  bei (x-0.7, y) & (x+0.7, y)
+\newcommand{\tzRH}[4]{
+	\draw [thick] (#1-0.7, #2-0.25) rectangle (#1+0.7, #2+0.25);
+	\IfEqCase{#4}{
+		{a}{\node [above] at (#1, #2+0.25) {\Large #3};}%
+		{b}{\node [below] at (#1, #2-0.25) {\Large #3};}%
+	}
+}
+
+%Vertikaler Widerstand Parameter: xKoordinate, yKoordinate, Bezeichnung, Position (r=>right, l=>left)
+%Anschluss ist  bei (x, y+0.7) & (x, y-0.7)
+\newcommand{\tzRV}[4]{
+	\draw [thick] (#1-0.25, #2-0.7) rectangle (#1+0.25, #2+0.7);
+	\IfEqCase{#4}{
+		{r}{\node [right] at (#1+0.25, #2) {\Large #3};}%
+		{l}{\node [left] at (#1-0.25, #2) {\Large #3};}%
+	}
+}
+
+%Horizontaler Kondensator Parameter: xKoordinate, yKoordinate, Bezeichnung, Position (a=>above, b=>below)
+%Anschluss ist  bei (x-0.25, y) & (x+0.25, y)
+\newcommand{\tzCH}[4]{
+	\draw [ultra thick] (#1+0.25, #2-0.6) -- (#1+0.25, #2+0.6);
+	\draw [ultra thick] (#1-0.25, #2-0.6) -- (#1-0.25, #2+0.6);
+	\IfEqCase{#4}{
+		{a}{\node [above] at (#1, #2+0.5) {\Large #3};}%
+		{b}{\node [below] at (#1, #2-0.5) {\Large #3};}%
+	}
+}
+
+%Vertikaler Kondensator Parameter: xKoordinate, yKoordinate, Bezeichnung, Position (r=>right, l=>left)
+%Anschluss ist  bei (x, y+0.25) & (x, y-0.25)
+\newcommand{\tzCV}[4]{
+	\draw [ultra thick] (#1-0.6, #2+0.25) -- (#1+0.6, #2+0.25);
+	\draw [ultra thick] (#1-0.6, #2-0.25) -- (#1+0.6, #2-0.25);
+	\IfEqCase{#4}{
+		{r}{\node [right] at (#1+0.5, #2) {\Large #3};}%
+		{l}{\node [left] at (#1-0.5, #2) {\Large #3};}%
+	}
+}
+
+%Vertikale Spannungsquelle Parameter: xKoordinate, yKoordinate, Bezeichnung, Position (r=>right, l=>left), Ausrichtung(+=> + oben, -=> - oben)
+%Anschluss ist  bei (x, y+0.5) & (x, y-0.5)
+\newcommand{\tzUV}[5]{
+	\draw [thick] (#1, #2) circle [radius=0.5];
+	\IfEqCase{#5}{
+		{+}{\node at (#1, #2+0.25) {\Large $+$};
+			\node at (#1, #2-0.25) {\Large $-$};}
+		{-}{\node at (#1, #2+0.25) {\Large $-$};
+			\node at (#1, #2-0.25) {\Large $+$};}
+	}
+	
+	\IfEqCase{#4}{
+		{r}{\node [right] at (#1+0.5, #2) {\Large #3};}%
+		{l}{\node [left] at (#1-0.5, #2) {\Large #3};}%
+	}
+}
+
+%Knoten Parameter: xKoordinate, yKoordinate
+\newcommand{\tzKN}[2]{
+	\draw[fill=black] (#1, #2) circle(0.07);
+}
+
+%Schalter (Schliesser) Horizontal Parameter: xKoordinate, yKoordinate
+%Anschluss ist bei (x-0.6, y) & (x+0.6, y)
+\newcommand{\tzSH}[2]{
+	\draw (#1-0.5, #2) circle(0.1);
+	\draw (#1+0.5, #2) circle(0.1);
+	
+	\draw [thick] (#1-0.4, #2) -- (#1+0.5, #2+0.4);
+}
+
+%Schalter (Schliesser) Vertikal Parameter: xKoordinate, yKoordinate
+%Anschluss ist bei (x, y+0.6) & (x, y-0.6)
+\newcommand{\tzSV}[2]{
+	\draw (#1, #2-0.5) circle(0.1);
+	\draw (#1, #2+0.5) circle(0.1);
+	
+	\draw [thick] (#1, #2+0.4) -- (#1+0.4, #2-0.5);
+}
+
+%Horizontale Induktivität Parameter: xKoordinate, yKoordinate, Bezeichnung, Position (a=>above, b=>below)
+%Anschluss ist  bei (x-0.7, y) & (x+0.7, y)
+\newcommand{\tzLH}[4]{
+	\filldraw [black] (#1-0.7, #2-0.25) rectangle (#1+0.7, #2+0.25);
+	\IfEqCase{#4}{
+		{a}{\node [above] at (#1, #2+0.25) {\Large #3};}%
+		{b}{\node [below] at (#1, #2-0.25) {\Large #3};}%
+	}
+}
+
+%Vertikale Induktivität Parameter: xKoordinate, yKoordinate, Bezeichnung, Position (r=>right, l=>left)
+%Anschluss ist  bei (x, y+0.7) & (x, y-0.7)
+\newcommand{\tzLV}[4]{
+	\filldraw [black] (#1-0.25, #2-0.7) rectangle (#1+0.25, #2+0.7);
+	\IfEqCase{#4}{
+		{r}{\node [right] at (#1+0.25, #2) {\Large #3};}%
+		{l}{\node [left] at (#1-0.25, #2) {\Large #3};}%
+	}
+}
+
+%Horizontale Induktivität Parameter: xKoordinate, yKoordinate, Bezeichnung, Position (a=>above, b=>below)
+%Anschluss ist  bei (x-0.8, y) & (x+0.8, y)
+\newcommand{\tzCoilH}[4]{
+	\draw (#1-0.8, #2) arc [radius=0.2, start angle=180, end angle = 0];
+	\draw (#1-0.4, #2) arc [radius=0.2, start angle=180, end angle = 0];
+	\draw (#1, #2) arc [radius=0.2, start angle=180, end angle = 0];
+	\draw (#1+0.4, #2) arc [radius=0.2, start angle=180, end angle = 0];
+	\IfEqCase{#4}{
+		{a}{\node [above] at (#1, #2+0.25) {\Large #3};}%
+		{b}{\node [below] at (#1, #2) {\Large #3};}%
+	}
+}
+
+%Vertikale Induktivität Parameter: xKoordinate, yKoordinate, Bezeichnung, Position (r=>right, l=>left)
+%Anschluss ist  bei (x, y+0.7) & (x, y-0.7)
+\newcommand{\tzCoilV}[4]{
+	\draw (#1, #2+0.8) arc [radius=0.2, start angle=90, end angle = -90];
+	\draw (#1, #2+0.4) arc [radius=0.2, start angle=90, end angle = -90];
+	\draw (#1, #2) arc [radius=0.2, start angle=90, end angle = -90];
+	\draw (#1, #2-0.4) arc [radius=0.2, start angle=90, end angle = -90];
+	\IfEqCase{#4}{
+		{r}{\node [right] at (#1+0.25, #2) {\Large #3};}%
+		{l}{\node [left] at (#1, #2) {\Large #3};}%
+	}
+}
+
+%Transformator Parameter: xKoordinate, yKoordinate, Bezeichnung
+%Anschluss ist  bei (x-1.1, y+0.8) & (x-1.1, y-0.8) &
+%					(x+1.1, y+0.8) & (x+1.1, y-0.8)
+\newcommand{\tzTransformator}[3]{
+	\draw [ultra thick] (#1, #2+0.6) -- (#1, #2-0.6);
+	
+	\draw (#1-0.6, #2+0.8) arc [radius=0.2, start angle=90, end angle = -90];
+	\draw (#1-0.6, #2+0.4) arc [radius=0.2, start angle=90, end angle = -90];
+	\draw (#1-0.6, #2) arc [radius=0.2, start angle=90, end angle = -90];
+	\draw (#1-0.6, #2-0.4) arc [radius=0.2, start angle=90, end angle = -90];
+	
+	\draw (#1+0.6, #2+0.8) arc [radius=0.2, start angle=90, end angle = 270];
+	\draw (#1+0.6, #2+0.4) arc [radius=0.2, start angle=90, end angle = 270];
+	\draw (#1+0.6, #2) arc [radius=0.2, start angle=90, end angle = 270];
+	\draw (#1+0.6, #2-0.4) arc [radius=0.2, start angle=90, end angle = 270];
+	
+	\draw (#1-0.6, #2+0.8) -- (#1-1.1, #2+0.8);
+	\draw (#1-0.6, #2-0.8) -- (#1-1.1, #2-0.8);
+	\draw (#1+0.6, #2+0.8) -- (#1+1.1, #2+0.8);
+	\draw (#1+0.6, #2-0.8) -- (#1+1.1, #2-0.8);
+	
+	\node [above] at (#1, #2+0.6) {\Large #3};
+}
+
+%Strompfeil Parameter: xKoordinate, yKoordinate, Bezeichung, Richtung (r=>right, l=>left, u=>up, d=>down), Position (l=>left, r=>right, a=>above, b=>below)
+%Anschluss ist bei
+\newcommand{\tzCurrent}[5]{
+	\IfEqCase{#4}{
+		{r}{\draw [thick, red] (#1-0.2, #2+0.2) -- (#1, #2) --(#1-0.2, #2-0.2);}
+		{l}{\draw [thick, red] (#1+0.2, #2+0.2) -- (#1, #2) --(#1+0.2, #2-0.2);}
+		{u}{\draw [thick, red] (#1-0.2, #2-0.2) -- (#1, #2) --(#1+0.2, #2-0.2);}
+		{d}{\draw [thick, red] (#1-0.2, #2+0.2) -- (#1, #2) --(#1+0.2, #2+0.2);}
+	}
+	\IfEqCase{#5}{
+		{l}{\node [left, red] at (#1-0.2, #2) {\Large #3};}
+		{r}{\node [right, red] at (#1+0.2, #2) {\large #3};}
+		{a}{\node [above, red] at (#1, #2+0.2) {\Large #3};} 
+		{b}{\node [below, red] at (#1, #2-0.2) {\Large #3};}	
+	}
+
+}
+
+

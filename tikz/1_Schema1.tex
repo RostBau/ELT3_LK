@@ -1,0 +1,45 @@
+%Autor: Simon Walker
+%Version: 1.0
+%Datum: 10.11.2019
+
+\begin{tikzpicture}[scale=0.7, every node/.style={scale=0.7}]
+%\draw[help lines] (0,0) grid (9, 5);
+\normalsize
+
+% Spannungsquelle
+\tzUV{0.5}{2.5}{$U_0$}{r}{+}
+
+% Leitungen
+%U0 - SW
+\draw (0.5, 3) -- (0.5, 4.5) -- (1.4, 4.5);
+%SW - R1
+\draw (2.6, 4.5) -- (4.5-0.7, 4.5);
+%R1 - C
+\draw (5.2, 4.5) -- (7.5, 4.5) -- (7.5, 2.75);
+\tzKN{6}{4.5} %Knoten 1
+%Knoten1 - R_2
+\draw (6, 4.5) -- (6, 3.2);
+%R2 - Knoten2
+\draw (6, 1.8) -- (6, 0.5);
+\tzKN{6}{0.5} %Knoten 2
+%C - U0
+\draw (0.5, 2) -- (0.5, 0.5) -- (7.5, 0.5) -- (7.5, 2.25);
+
+%Schalter (Schliesser)
+\tzSH{2}{4.5}
+
+% Widerstand R1
+\tzRH{4.5}{4.5}{$R_1$}{b}
+
+% Widerstand R2 (mitte 5.5, 2.5)
+\tzRV{6}{2.5}{$R_2$}{l}
+
+% Kondensator C (mitte 7.5, 2.5)
+\tzCV{7.5}{2.5}{$C$}{l}	
+
+% Spannungspfeil über Kondensator
+\draw [->,thick ,blue] (8.5, 3.5) to [out=-70, in=70] (8.5, 1.5); 
+\node [blue, right] at (8.7, 2.5) {\Large $u_C(t)$};
+
+
+\end{tikzpicture}

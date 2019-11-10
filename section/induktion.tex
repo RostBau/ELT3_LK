@@ -1,0 +1,143 @@
+\kommentar{Induktion} %Thema
+  
+\begin{karte}{Wie lautet das einfache Induktionsgesetz?}
+	\begin{center}
+		\huge
+		$u_{i}(t)=-\dfrac{d \Phi}{d t}(t)$
+	\end{center}
+\end{karte}
+
+\begin{karte}{Was sind die Primär- und die Sekundäreffekte der Induktion?}
+	\flushleft
+	\textbf{Primäreffekt:} Phänomen, dass ein elektrisches \\Feld($\rightarrow$ Spannung) entsteht, wenn sich das Magnetfeld ändert.\\
+	\textbf{Sekundäreffekt:} Phänomen, welches eintrifft wenn durch die induzierte Spannung ein Strom fliessen kann. Dieser Strom verursacht ein Gegenfeld nach Lenz.\\[10pt]
+	Der Primäreffekt tritt immer auf. Der Sekundäreffekt kann nur auftreten wenn ein Strom fliessen kann.
+\end{karte}
+
+\begin{karte}{Was ist elektromagnetische Induktion?}
+	Eine induzierte Spannung durch ein zeitlich Änderung des Magnetfelds.\\
+	\begin{equation*}
+		u_{i}(t)=-\dfrac{d \Phi}{d t}(t)
+	\end{equation*}
+	\\[10pt]
+	Ein Sekundäreffekt tritt dann ein wenn der Stromkreis geschlossen wird. Der fliessende Strom verursacht dann ein Gegenfeld. 
+\end{karte}
+
+\begin{karte}{Was ist Ruheinduktion?}
+	Die zeitliche Änderung des Magnetfelds kommt von aussen. Die Geometrie in welcher eine Spannung induziert wird ruht.
+\end{karte}
+
+\begin{karte}{Wie wird im oder vom Magnetfeld Arbeit verrichtet?}
+	Grundsätzlich wird eine Arbeit verrichtet, wenn etwas gegen eine Kraft bewegt wird.
+	\begin{enumerate}
+		\item Magnetische Flussänderung bewirken Wirbel im elektrischen Feld.
+		\item Der Wirbel im elektrischen feld kann einen Strom verursachen. Dieser wiederum verursacht Wirbel im Magnetfeld.
+		\item Die Magnetfelder überlagern sich, wirken einander entgegen.4
+	\end{enumerate}
+\end{karte}
+
+\begin{karte}{Was ist totale Induktion?}
+	Die totale Induktion oder Totalinduktion kann sowohl durch eine Bewegung innerhalb eines Magnetfelds, als auch durch zeitlich veränderliche Magnetfelder entstehen – je nach Sichtweise sind die Effekte schlicht ein und dieselben.\\
+	Grundsätzlich kann somit gesagt werden, das die Totalinduktion durch die \textbf{Bewegungsinduktion} und die \textbf{Ruheinduktion} zusammengesetzt werden kann.
+\end{karte}
+
+\begin{karte}{Was bedeutet Selbstinduktion und Gegeninduktion?}
+	Unter Selbstinduktion versteht man die Induktionswirkung eines Stromes auf seinen eigene Geometrie. Im Gegensatz dazu steht die Gegeninduktivität. Sie wird verursacht durch eine Stromänderung einer anderen Spule.
+\end{karte}
+
+\begin{karte}{Wie lautet das Ohmsche Gesetz von Induktivitäten?}	
+	Der zeitlich veränderliche Strom $i_{L}$ verursacht ein Magnetfeld und damit einen sich ebenfalls zeitlich ändernden magnetischen Fluss $\Phi(t)$. An den Anschlussklemmen entsteht somit die Spannung $u_{L}(t)=\frac{d \Phi}{d t}(t)$.
+	Daraus folgt dann das Ohmsche Gesetz von Induktivitäten:
+	\begin{center}
+		\huge
+		$\dfrac{d i_{L}}{d t}(t)=\dfrac{u_{L}(t)}{L}$
+	\end{center}
+\end{karte}
+
+\begin{karte}{Wie lautet der vollständige Durchflutungssatz?}
+	\begin{center}
+		$\displaystyle \oint_{C=\partial A} \vec{H} \cdot d \vec{l}=\int_{A}\left(\vec{J}_{\mathrm{frei}}+\frac{d \vec{D}}{d t}\right) \cdot d \vec{s} \quad \stackrel{\circ}{V}_{m}(t)=\Theta(t)+\frac{d \Psi}{d t}(t)$
+	\end{center}
+	Beispiel: Berechnung der Induktivität einer Ringkernspule\\[10pt]
+	\begin{minipage}{0.4\textwidth}
+		\input{tikz/2_TorusCoil.tex}
+	\end{minipage}
+	\begin{minipage}{0.6\textwidth}
+			$L = N \cdot \frac{\Phi}{I}$\\
+			\noindent\hspace*{3mm}
+			$\Phi = B \cdot A$\\
+			\noindent\hspace*{6mm} 
+			$B = \mu \cdot H$\\
+			\noindent\hspace*{9mm} 
+			$H \cdot l = N \cdot I \rightarrow H = \frac{N \cdot I}{l}$\\
+			\noindent\hspace*{6mm} 
+			$B = \mu \cdot H = \frac{\mu \cdot N \cdot I}{l}$\\
+			\noindent\hspace*{3mm}
+			$\Phi = B \cdot A = \frac{A\mu \cdot N \cdot I}{l}$\\
+			$L = N \cdot \frac{\Phi}{I} = \frac{A\mu \cdot N^2}{l}$
+	\end{minipage}
+	
+\end{karte}
+
+\begin{karte}{Wie wird die Induktivität einer Zylinderspule berechnet?}
+	\flushleft
+	Das Feld innerhalb einer Zylinderspule kann als Homogen betrachtet werden.\\[5pt]
+	\begin{minipage}{0.37\textwidth}
+		\input{tikz/2_ZylinderSpule.tex}
+	\end{minipage}
+	\begin{minipage}{0.6\textwidth}
+		$L = N \cdot \frac{\Phi}{I}$\\
+		\noindent\hspace*{3mm}
+		$\Phi = B \cdot A \quad \rightarrow \quad A = r^2\cdot\pi$ \\
+		\noindent\hspace*{6mm} 
+		$B = \mu \cdot H$\\
+		\noindent\hspace*{9mm} 
+		$H \cdot l = N \cdot I \rightarrow H = \frac{N \cdot I}{l}$\\
+		\noindent\hspace*{6mm} 
+		$B = \mu \cdot H = \frac{\mu \cdot N \cdot I}{l}$\\
+		\noindent\hspace*{3mm}
+		$\Phi = B \cdot A = \frac{A\mu \cdot N \cdot I}{l}$\\[5pt]
+		$\boxed{L = \dfrac{A \cdot \mu \cdot N^2}{l}}$
+	\end{minipage}
+\end{karte}
+
+\begin{karte}{Wie moddeliert man einen idealen Übertrager (Transformator)?}
+	\flushleft
+	\begin{minipage}{0.45\textwidth}
+		\input{tikz/2_IdealerTrafo.tex}
+	\end{minipage}
+	\begin{minipage}{0.52\textwidth}
+	Ein Idealer Übertrager zeichnet sich dadurch aus, das insbesondere die Eingangsleistung gleich gross ist wie die Ausgangsleistung. $P_{in} = P_{out}$
+	\end{minipage}\\[10pt]
+	Zudem gelten Folgende Gleichungen:
+	\begin{equation*}
+		\begin{array}{lcl}
+		{\color{red}{I_1}} = \dfrac{\color{red}{I_2}}{ü} & \hspace{15pt} &
+		{\color{blue}{U_2}} = \dfrac{{\color{blue}{U_1}}}{ü}\\ \vspace{1pt}\\
+		{\color{blue}{U_1}} = {\color{blue}{U_2}} \cdot ü & \hspace{15pt} & 
+		\dfrac{{\color{blue}{U_1}}}{{\color{red}{I_1}}} = \dfrac{{\color{blue}{U_2}} \cdot ü}{\color{red}{I_2}}/ü = ü^2\cdot R_L\\
+		\end{array}
+	\end{equation*}
+	
+\end{karte}
+
+\begin{karte}{Wie lauteten die Transformatoren Gleichungen?}
+	\Large
+	\begin{equation*}
+		\left[\begin{array}{c} U_1 \\ U_2 \end{array}\right] = 
+		\left[ \begin{array}{cc} L_1 & M \\ M & L_2 \end{array} \right]
+		\left[ \begin{array}{c} I_1 \\ I_2 \end{array} \right]
+	\end{equation*}
+	\centering
+	\input{tikz/2_Trafogleichung.tex}
+\end{karte}
+
+\begin{karte}{Was unterscheidet ideale und reale Kopplung?}
+	\begin{itemize}
+		\item Ideale Kopplung:\\
+		$ M = \sqrt{L_1 \cdot L_2} $
+		\item Reale Kopplung:\\
+		$ M = k \cdot \sqrt{L_1 \cdot L_2} $
+		\item Der Kopplungsfaktor $k$ kommt von dem Streufeld. Je mehr Streufeld desto kleiner ist $k$.
+	\end{itemize}
+\end{karte}
