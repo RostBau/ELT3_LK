@@ -1,0 +1,36 @@
+%Autor: Simon Walker
+%Version: 1.0
+%Datum: 14.11.2019
+
+\begin{tikzpicture}[thick,scale=0.7, every node/.style={scale=0.7}]
+	%\draw[help lines] (0,0) grid (10, 5);
+	
+	
+	\tzTransformator{5.5}{2.5}{$M$}
+	\node[left] at (5.5-0.6, 2.5) {\Large $L_1$};
+	\node[right] at (5.5+0.6, 2.5) {\Large $L_2$};
+	
+	\tzRV{3.5}{2.5}{}{} %RP
+	\tzRH{2}{4}{}{} %RS1
+	\tzRH{8}{4}{}{} %RS2
+	
+	
+	\draw (5.5-1.1, 2.5+0.8) -- (5.5-1.1, 4) -- (2 + 0.7, 4); %Trafo RS1
+	\draw (0, 4) -- (2-0.7, 4); %To RS1
+	\draw (0, 1) -- (5.5-1.1, 1) -- (5.5-1.1, 2.5-0.8); %To Trafo
+	\draw (5.5+1.1, 2.5+0.8) -- (5.5+1.1, 4) -- (8 - 0.7, 4); %Trafo RS2
+	\draw (8+0.7 , 4) -- (9.5, 4); %to RS2
+	\draw (9.5, 1) -- (5.5+1.1, 1) -- (5.5+1.1, 2.5-0.8); %To Trafo
+	
+	\draw (3.5, 4) -- (3.5, 2.5+0.7);
+	\draw (3.5, 1) -- (3.5, 2.5-0.7);
+	\tzKN{3.5}{4}
+	\tzKN{3.5}{1}
+	
+	
+	\tzCurrent{1}{4}{$i_1(t)$}{r}{a}
+	
+	\draw [->,thick ,blue] (9.5, 4-0.1) to [out=-60, in=60] (9.5, 1+0.1); 
+	\node [blue, left] at (9.5, 2.5) {\Large $u_2(t)$};
+	
+\end{tikzpicture}

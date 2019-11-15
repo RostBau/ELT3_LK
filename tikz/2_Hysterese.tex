@@ -1,0 +1,26 @@
+%Autor: Simon Walker
+%Version: 1.0
+%Datum: 14.11.2019
+%Grundgrafik von OSjerick (tex.stackexchange.com) https://tex.stackexchange.com/questions/275192/hysteresis-loop
+
+\begin{tikzpicture}%[thick,scale=0.7, every node/.style={scale=0.7}]
+	\begin{axis}[very thick,
+	             samples = 50,
+	             xlabel = H,
+	             ylabel = B,
+	             xmin = -5,
+	             xmax = 5,
+	             ymin = -3,
+	             ymax = 3,
+	             axis x line = middle,
+	             axis y line = middle,
+	             ticks = none,
+	             width=5cm,
+	             height=5cm]
+	    \addplot[dashed] plot (\x, 2);
+	    \addplot[dashed] plot (\x,-2);
+	    \addplot[red, name path=A] plot (\x, {4/(1 + exp(-1.7*\x+3))-2});
+	    \addplot[red, name path=B] plot (\x, {4/(1 + exp(-1.7*\x-3))-2});
+	    \addplot[red!20] fill between[of=A and B];
+	\end{axis}
+\end{tikzpicture}

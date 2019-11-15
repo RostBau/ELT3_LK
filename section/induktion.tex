@@ -141,3 +141,57 @@
 		\item Der Kopplungsfaktor $k$ kommt von dem Streufeld. Je mehr Streufeld desto kleiner ist $k$.
 	\end{itemize}
 \end{karte}
+
+\begin{karte}{Welche Verluste können Transformatoren aufweisen?}
+	\begin{itemize}
+		\item Kupferverluste vor allem auf der Seite mit der höheren Anzahl an Windungen und kleineren Leiterquerschnitt.
+		\item Magnetisierungsverluste. (Wegen der Hysterese) Es muss mehr Energie für das Aufbauen des Magnetfelds aufgewendet werden als beim Abbauen wider frei wird.
+		\item Wirbelströme.
+	\end{itemize}
+\end{karte}
+
+\begin{karte}{Was sind Hysterese Verluste und wie sind diese zu Erklären?}
+	\begin{minipage}{0.49\textwidth}
+		\input{tikz/2_Hysterese.tex}
+	\end{minipage}
+	\begin{minipage}{0.49\textwidth}
+		\textbf{Formel Energiedichte:}\\[10pt]
+		$
+			w_m = \frac{1}{2} \cdot \vec{B} \cdot \vec{H}
+		$
+	\end{minipage}
+	Beim aufbauen des Magnetfelds muss, dank der Hysterese, mehr Energie aufgewendet werden, als beim abbauen wider frei gesetzt wird. Dieser Verlust ist proportional zur Fläche, welche durch die Hysteresekurve eingeschlossen wird. Dieser Verlust lässt sich über die Energiedichte berechnen.
+\end{karte}
+
+\begin{karte}{Wie Verursachen Wirbelströme im Transformator Verluste und wie kann man diese minimieren?}
+	\input{tikz/2_Wirbelstrom.tex}\\[5pt]
+	Ein sich änderndes Magnetfeld (in diesem Fall ist es zunehmend), Induziert ein Strom im Eisen. Dieser wiederum verursacht ein Magnetfeld welches der Änderung entgegenwirkt. (gemäss der Lenzschen Regel)\\[5pt]
+	Deshalb wird in einem Transformator meistens ein geschichteter Eisenkern verwendet. Dieser lässt den Wirbelstrom nur in einer dünnen Scheibe fliessen. Dadurch ist der Wirbelstrom kleiner und kann somit weniger stark dem Feld entgegen wirken. 
+\end{karte}
+
+\begin{karte}{Wie können die Hystereseverluste im Leerlaufbetrieb gemessen werden?}
+	\input{tikz/2_HystereseVerluste.tex}\\
+	\begin{equation*}
+		H(t) = \frac{N\cdot i_1(t)}{l}  
+		\quad \& \quad 
+		B(t) = \frac{\int u_2(t) dt}{A}
+	\end{equation*}\\[2pt]
+	$H(t)$ lässt sich durch den Durchflutungssatz berechnen.\\
+	$B(t)$ lässt sich über die Induzierte Spannung berechnen.\\ 
+\end{karte}
+
+\begin{karte}{Wie äussert sich der Skin-Effekt und von Welchen Parameter hängt er ab?}
+	\begin{minipage}{0.6\textwidth}
+		\begin{itemize}
+			\item Je höher die Frequenz, desto weniger Strom fliest der im Innern des Leiters. Und desto grösser wird dadurch der Widerstand, da die effektive Querschnittsfläche kleiner wird
+			\item Die Eindringtiefe (Skin-Tiefe) ist wie folgt definiert:\\[5pt]
+			\large
+			$ \delta=\sqrt{\dfrac{2}{\omega \sigma \mu}} $
+		\end{itemize}
+	\end{minipage}
+	\begin{minipage}{0.39\textwidth}
+		%Grafik von Wikipedia (Public Domain) https://de.wikipedia.org/wiki/Skin-Effekt
+		\includegraphics[width=\textwidth]{bilder/2_SkinEfekt.png}
+	\end{minipage}
+	
+\end{karte}
