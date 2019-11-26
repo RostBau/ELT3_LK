@@ -1,0 +1,22 @@
+\kommentar{Repetition ELT2} %Thema
+
+\begin{karte}{Wie gross ist das Elektrische Feld, auf Kopfhöhe 2m) unter einer Hochspannungsleitung?\\
+	\small höhe $h = 10m$, Leitungsdurchmesser $d = 3cm$, $U=100kV$}
+	\small
+	\begin{compactenum}
+		\item Ladung berechnen:
+		\begin{align*}
+			U &= \int_{d/2}^{h} E \cdot dl = \int_{d/2}^{h} \frac{Q}{2 \pi \varepsilon_0 r l} \cdot dl  \\
+			&=\frac{Q}{2 \pi \varepsilon_0 l} \cdot \left[ln(r)\right]_{d/2}^{h}\\
+			Q & = \frac{U \cdot 2\pi \varepsilon_0\cdot l}{ln(2h/d)}
+		\end{align*}
+		\item In Formel von $E$ einsetzen. 
+		\renewcommand\CancelColor{\color{red}}
+		\begin{align*}	
+			E &= \frac{Q}{2\pi \varepsilon_0\cdot r \cdot l} =
+			\frac{1}{\cancel{2\pi \varepsilon_0}\cdot r \cdot \bcancel{l}} \cdot
+			\frac{U \cdot \cancel{2\pi \varepsilon_0}\cdot \bcancel{l}}{ln(2h/d)}\\
+			& = \left.\frac{U}{ln(2h/d)\cdot r}\right|_{r=8m} \hspace{-7mm} = 1.92kV/m
+		\end{align*}
+	\end{compactenum}
+\end{karte}

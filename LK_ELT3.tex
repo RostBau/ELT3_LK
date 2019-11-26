@@ -23,7 +23,7 @@
 
 \usepackage{amsmath}
 \usepackage{bm}
-\usepackage{paralist}
+\usepackage{paralist} % für compactenum and compactitem
 
 \usepackage[T1]{fontenc}% wichtig für Trennung von Wörtern mit Umlauten
 \usepackage[ngerman]{babel}% deutsche Trennregeln
@@ -36,6 +36,9 @@
 \usepackage{xstring} %If statements
 \usepackage{scalefnt}
 
+\usepackage{cancel} %\cancel befehl kürzen %Farbe ändern mit \renewcommand\CancelColor{\color{red}}
+
+
 \usepackage{pgfplots}
 \usepgfplotslibrary{fillbetween}
 
@@ -47,8 +50,10 @@
 	\setcardpagelayout
 	
 	\fach{ELT3}
+	\input{section/Recap_ELT2}
 	\input{section/ladenEntladen.tex}
 	\input{section/induktion.tex}
+	\input{section/Wellen_Strahlungsfelder.tex}
 	
 	
 	
