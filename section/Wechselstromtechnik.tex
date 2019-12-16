@@ -1,0 +1,64 @@
+\kommentar{Wechselstromtechnik}  %Thema
+
+\begin{karte}{Wie lautet das komplexe Signal zur reellen Zeitfunktion\\
+	$ u(t) = U_0 \cdot sin(\omega t + \varphi) \rightarrow  \underline{u}(t)$?}
+$ u(t) = U_0 \cdot sin(\omega t + \varphi) \rightarrow  \underline{u}(t)$\\
+\begin{enumerate}
+	\item $ sin $ in $ cos $ umwandeln:\\
+	$ u(t)=U_0 \cdot cos(\omega t + \varphi - \color{red}{\pi/2} \normalcolor) $
+	\item Imaginärteil hinzufügen:\\
+	$ u(t)=U_0 \cdot cos(\omega t + \varphi - \pi/2) + 
+	\color{red}{U_0 \cdot j \cdot sin (\omega t + \varphi-\pi/2)}$
+	\item Euler:\\
+	$ \underline{u}(t) = \underbrace{U_0 \cdot e^{j\omega t} \cdot 
+		e^{j\varphi}}_{\text{Phasor}} \cdot \underbrace{e^{-j \pi/2}}_{-j} $
+\end{enumerate}
+\end{karte}
+
+\begin{karte}{Welche Vorteile bringt uns die komplexe Wechselstromrechnung gegenüber der reellen Wechselstromrechnung?}
+	Lineare Netzwerke können durch Multiplikationen gelöst werden anstelle von einer DGL.
+\end{karte}
+
+\begin{karte}{Was ist eine Admittanz?}
+	\begin{compactitem}
+		\item Komplexer Leitwert
+		\item Kehrwert der Impedanz \\
+		$ \underline{Y} = \dfrac{1}{\underline{Z}} \rightarrow arg(Y)=-arg(Z) \rightarrow \left|\underline{Y}\right| = \dfrac{1}{\left|\underline{Z}\right|} $
+		\item Wird benötigt zum berechnen von Parallelen Impedanzen		
+	\end{compactitem}
+	\vspace{3mm}
+	\input{tikz/4_AdmittanzImpedanz.tex}
+\end{karte}
+
+\begin{karte}{Was bezeichnet man als Reaktanz?}
+	\begin{itemize}
+		\item Die Reaktanz ist der Imaginär Teil der Impedanz. Oder auch der Blindwiderstand.
+		\item Das Formelzeichen der Reaktanz ist $X$
+		\item Für Kapazitäten ist die Reaktanz negativ
+		\item Für Induktivitäten positiv
+	\end{itemize}
+\end{karte}
+
+\begin{karte}{Wie ist die Phasenverschiebung definiert?}
+	Die Referenz ist der Strom.\\
+	\input{tikz/4_Phasenverschiebung.tex}\\
+	Wenn der Winkel negativ ist (wie im Beispiel) sagt man, dass die Spannung nacheilt, oder der Strom voreilt.
+\end{karte}
+
+\begin{karte}{Wie lautet das Ohmsche Gesetz einer Kapazität?}
+	\begin{itemize}
+		\item $\dfrac{du_{C}}{dt}=\dfrac{i_{C}}{C}$
+		\item im Komplexen: $\underline{U} = \dfrac{1}{j \omega C} \cdot \underline{I}$
+	\end{itemize}
+\end{karte}
+
+\begin{karte}{Was ist die Knotenpotentialmethode}
+	\begin{itemize}
+		\item Systematische Lösungsmethode
+		\item Jeder unabhängige Knoten bekommt eine Gleichung für das Potential
+		\item $\mathbf{G} \cdot \vec{u} = \vec{i}$\\
+		Leitwertmatrix $\cdot$ Spannungsvektor $=$ Stromvektor
+		\item im Komplexen 
+		$\mathbf{\underline{Y}} \cdot \underline{\vec{U}} = \underline{\vec{I}}$
+	\end{itemize}
+\end{karte}
