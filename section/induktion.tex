@@ -122,11 +122,16 @@
 \end{karte}
 
 \begin{karte}{Wie lauteten die Transformatoren Gleichungen?}
-	\Large
+	\large
 	\begin{equation*}
 		\left[\begin{array}{c} U_1 \\ U_2 \end{array}\right] = 
-		\left[ \begin{array}{cc} L_1 & M \\ M & L_2 \end{array} \right]
+		\dfrac{d}{dt}\left[ \begin{array}{cc} L_1 & M \\ M & L_2 \end{array} \right]
 		\left[ \begin{array}{c} I_1 \\ I_2 \end{array} \right]
+	\end{equation*}
+	\begin{equation*}
+	\left[\begin{array}{c} \underline{U}_1 \\ \underline{U}_2 \end{array}\right] = 
+	j\omega \left[ \begin{array}{cc} L_1 & M \\ M & L_2 \end{array} \right]
+	\left[ \begin{array}{c} \underline{I}_1 \\ \underline{I}_2 \end{array} \right]
 	\end{equation*}
 	\centering
 	\input{tikz/2_Trafogleichung.tex}
